@@ -1,0 +1,36 @@
+html, body {
+  height: 100%;
+  width: 100%;
+}
+.contatos{
+  color: red;
+  margin-top: 3%;
+}
+table{
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.col-top{
+  margin-top: 20%;
+}
+
+#spacin{
+  margin-top: 2%;
+}
+
+#hover-option:hover{
+  background-color: black;
+  color: white;
+  border-radius: 12px;
+  transition: 1s;
+}
+
+#container-product{
+  background-color: black;
+}
+
+#row-sobre{
+  margin-top: 5%;
+}
