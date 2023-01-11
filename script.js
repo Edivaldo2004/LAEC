@@ -49,3 +49,10 @@ function localidade() {
 
   map.src = "https://maps.google.com/maps?q=" + localidade + "=2&output=embed";
 }
+
+function funcao1()
+{
+var x;
+var r=confirm("Adicionado ao carrinho");
+  window.location.href = "pagar.html"
+}
