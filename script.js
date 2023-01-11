@@ -1,58 +1,28 @@
-//localização
-
-let posicaoInicial;//variavel para capturar a posicao
-const capturarLocalizacao = document.getElementById('localizacao');
-const latitude = document.getElementById('latitude');
-const longitude = document.getElementById('longitude');
-const map = document.getElementById('mapa');
-
-const sucesso = (posicao) => {//callback de sucesso para captura da posicao
-  posicaoInicial = posicao;
-  latitude.innerHTML = posicaoInicial.coords.latitude;
-  longitude.innerHTML = posicaoInicial.coords.longitude;
-};
-
-const erro = (error) => {//callback de error (falha para captura de localizacao)
-  let errorMessage;
-  switch (error.code) {
-    case 0:
-      errorMessage = "Erro desconhecido"
-      break;
-    case 1:
-      errorMessage = "Permissão negada!"
-      break;
-    case 2:
-      errorMessage = "Captura de posição indisponível!"
-      break;
-    case 3:
-      errorMessage = "Tempo de solicitação excedido!"
-      break;
+function sucesso() {
+  var x;
+  var r = confirm("Copiado para a area de transferência");
+  if (r == true) {
+    x = "você pressionou OK!";
   }
-  console.log('Ocorreu um erro: ' + errorMessage);
-};
-
-capturarLocalizacao.addEventListener('click', () => {
-  navigator.geolocation.getCurrentPosition(sucesso, erro);
-
-  map.src =
-    "https://maps.google.com/maps?q=" +
-    posicaoInicial.coords.latitude + "," +
-    posicaoInicial.coords.longitude +
-    "&z=10&output=embed";
-
-});
-
-
-function localidade() {
-
-  const localidade = document.getElementById("local").value;
-
-  map.src = "https://maps.google.com/maps?q=" + localidade + "=2&output=embed";
+  else {
+    x = "Você pressionou Cancelar!";
+  }
+  document.getElementById("demo").innerHTML = x;
 }
 
-function funcao1()
-{
-var x;
-var r=confirm("Adicionado ao carrinho");
-  window.location.href = "pagar.html"
+function redirect() {
+  window.location.href = "cartao.html"
+  document.getElementById("demo").innerHTML = x;
+}
+
+function card() {
+  let name = document.getElementById("name").value
+  let numer = document.getElementById("numer").value
+  let age = document.getElementById("age").value
+  window.location.href = "informcartao.html"
+
+
+  let imprimir = document.getElementById("imprimir").innerHTML = name;
+  let imprimir2 = document.getElementById("imprimir2").innerHTML = numer;
+  let imprimir3 = document.getElementById("imprimir3").innerHTML = age;
 }
